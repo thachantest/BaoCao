@@ -117,9 +117,10 @@ namespace Cau1
             tbMa.Text = dgvNhanVien.Rows[idx].Cells[0].Value.ToString();
             tbHoTen.Text = dgvNhanVien.Rows[idx].Cells[1].Value.ToString();
             dateTimePickerNgaySinh.Text = dgvNhanVien.Rows[idx].Cells[2].Value.ToString();
+            checkBoxGioiTinh.Checked = dgvNhanVien.Rows[idx].Cells[3].Value.Equals(true);
             tbNoiSinh.Text = dgvNhanVien.Rows[idx].Cells[4].Value.ToString();
             cmBDonVi.Text = dgvNhanVien.Rows[idx].Cells[5].Value.ToString();
-            checkBoxGioiTinh.Checked=dgvNhanVien.Rows[idx].Cells[3].Value.Equals(true);
+            
             
 
 
