@@ -57,15 +57,21 @@ namespace Cau1
 
         private void btXoa_Click(object sender, EventArgs e)
         {
-            ProjectDTO Nv = new ProjectDTO();
-            Nv.IdEmployee = tbMa.Text;
-            Nv.Name = tbHoTen.Text;
-            Nv.PlaceBirth = tbNoiSinh.Text;
-            Nv.DateBirth = dateTimePickerNgaySinh.Text;
-            Nv.Depart = (Department)cmBDonVi.SelectedItem;
-            int idx = dgvNhanVien.CurrentCell.RowIndex;
-            cusBLL.DeleteCustomer(Nv);
-            dgvNhanVien.Rows.RemoveAt(idx);
+            DialogResult Thoat;
+            Thoat = MessageBox.Show("Bạn có muốn xóa không ? ", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (Thoat == DialogResult.OK)
+            {
+                ProjectDTO Nv = new ProjectDTO();
+                Nv.IdEmployee = tbMa.Text;
+                Nv.Name = tbHoTen.Text;
+                Nv.PlaceBirth = tbNoiSinh.Text;
+                Nv.DateBirth = dateTimePickerNgaySinh.Text;
+                Nv.Depart = (Department)cmBDonVi.SelectedItem;
+                int idx = dgvNhanVien.CurrentCell.RowIndex;
+                cusBLL.DeleteCustomer(Nv);
+                dgvNhanVien.Rows.RemoveAt(idx);
+            }
+            
         }
 
         private void btSua_Click(object sender, EventArgs e)
